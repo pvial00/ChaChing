@@ -49,7 +49,7 @@ void keysetup(unsigned char *key, unsigned char *nonce) {
 }
 
 void * crypt(unsigned char * data, unsigned char * key, unsigned char * nonce, int datalen) {
-    int c = 0;
+    long c = 0;
     int i = 0;
     int l = 4;
     uint32_t output;

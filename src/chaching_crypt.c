@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <stdint.h>
 #include "reddye.c"
 #include "reddye_kdf.c"
 
+int keylen = 32;
 uint32_t r[8] = {0};
 uint32_t temp[8] = {0};
 int k[4] = {0};

@@ -108,14 +108,14 @@ int main(int argc, char *argv[]) {
 		halfround(1, 5, 7, 3);
 		halfround(1, 5, 7, 3);
 		halfround(2, 6, 4, 0);
+		for (i = 0; i < 8; i++) {
+		    r[i] = (r[i] + temp[i]) & 0xFFFFFFFF;
+		}
 		output = (((((((r[0] + r[6]) ^ r[1]) + r[5]) ^ r[2]) + r[4]) ^ r[3]) + r[7]) & 0xFFFFFFFF;
 		k[0] = (output & 0x000000FF);
 		k[1] = (output & 0x0000FF00) >> 8;
 		k[2] = (output & 0x00FF0000) >> 16;
 		k[3] = (output & 0xFF000000) >> 24;
-		for (i = 0; i < 8; i++) {
-		    r[i] = (r[i] + temp[i]) & 0xFFFFFFFF;
-		}
 		for (c = (b * 4); c < ((b *4) + 4); c++) {
                     block[c] = block[c] ^ k[c % 4];
 		}
@@ -144,14 +144,14 @@ int main(int argc, char *argv[]) {
 		halfround(1, 5, 7, 3);
 		halfround(1, 5, 7, 3);
 		halfround(2, 6, 4, 0);
+		for (i = 0; i < 8; i++) {
+		    r[i] = (r[i] + temp[i]) & 0xFFFFFFFF;
+		}
 		output = (((((((r[0] + r[6]) ^ r[1]) + r[5]) ^ r[2]) + r[4]) ^ r[3]) + r[7]) & 0xFFFFFFFF;
 		k[0] = (output & 0x000000FF);
 		k[1] = (output & 0x0000FF00) >> 8;
 		k[2] = (output & 0x00FF0000) >> 16;
 		k[3] = (output & 0xFF000000) >> 24;
-		for (i = 0; i < 8; i++) {
-		    r[i] = (r[i] + temp[i]) & 0xFFFFFFFF;
-		}
 		for (c = (b * 4); c < ((b *4) + 4); c++) {
                     block[c] = block[c] ^ k[c % 4];
 		}
